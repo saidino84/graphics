@@ -1,0 +1,38 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	font-family: 'Google Sans Regular ';
+	box-sizing: border-box;
+}
+body{
+	background: #fefefe;
+	color: green;
+}
+header{
+	width: 100%;
+	height: 80px;
+	background: #11101b;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 100px;
+}
+.logo{
+	font-size: 20px;
+	font-weight: bold;
+	color: white;
+}
+.hamburger{
+	display: flex;
+}
+.nav-bar ul{
+	display: flex;
+	justify-content: space-between;
+}
+.nav-bar ul li{
+	color: #fefefe;
+	margin: 5px 10px;
+}

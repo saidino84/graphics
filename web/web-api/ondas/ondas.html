@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Desenhando ondas com Canvas</title>
+	<style>
+		canvas {
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="myCanvas" width="400" height="200"></canvas>
+	<script>
+		const canvas = document.getElementById('myCanvas');
+		const ctx = canvas.getContext('2d');
+
+		ctx.strokeStyle = '#f00';
+		ctx.beginPath();
+		ctx.moveTo(0, 100);
+
+		for (let i = 1; i <= 9; i++) {
+			ctx.lineTo(i * 40, 100 + 50 * Math.sin(i));
+		}
+
+		ctx.stroke();
+        ctx.closePath()
+
+        ctx.beginPath()
+        for (let i = 1; i <= 9; i++) {
+			// ctx.lineTo(i * 40, 100 + 50 * Math.sin(i));
+            ctx.arc(i * 40, 100 + 50 * Math.sin(i),2,0,360)
+            // ctx.arc()
+            ctx.fill()
+        ctx.closePath()
+
+		}
+	</script>
+</body>
+</html>

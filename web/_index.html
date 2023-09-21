@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <div>
+            <div class="checked">
+                <div class="check"></div>
+                <div class="check"> </div>
+                <div class="check"></div>
+                <div class="check"></div>
+            </div>
+            <a href="#" class="icon">Icon</a>
+        </div>
+        <nav class="navbar">
+            <ul class="menu">
+                 <li>About</li>
+                 <li>Contact</li>
+                 <li>Product</li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container" id="container">
+        <div class="left">
+        </div>
+         
+
+    
+    <div class="card">
+        <h3>Analise de Dados</h3>
+        <p>Analise Semanal de Transferências</p>
+        <div class="pulse" id="pulse-blue"></div>
+        <div class="pulse-red" id="pulse-red"></div>
+        <div class="area-chart">
+            <canvas class="canvas" id="canvas"></canvas>
+        </div>
+   
+        
+        <table class="styled-table">
+            <thead>
+                <th>Seg</th>
+                <th>Terc</th>
+                <th>Quart</th>
+                <th>Quinta</th>
+                <th>Sexta</th>
+                <th>Sabado</th>
+                <th>Domingo</th>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>6</td>
+                    <td>4</td>
+                    <td>12</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+               
+               
+            </tbody>
+        </table>
+    </div>
+
+</div>
+    <!-- <script src='month.js'></script> -->
+    <script src='api.js'></script>
+</body>
+</html>

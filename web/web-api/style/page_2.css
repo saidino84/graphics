@@ -1,0 +1,82 @@
+*{
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0px;
+}
+body{
+    padding: 10px;
+}
+a{ list-style: none;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+
+}
+.header{
+    padding-left: 10px;
+    background: black;
+    flex-wrap: wrap; /*quando atela for pekna ele se alinha de cima/ baixa*/
+    display: flex;
+    justify-content: space-between; /*para manter longe um do outro   */ 
+    padding: 10px;
+    grid-template-columns: 1fr 4fr;
+}
+.menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+    align-items: center;
+}
+.menu li{
+    padding-left: 10px;
+   list-style: none;
+}
+.menu li a{
+    margin-left: 10px;
+    padding: 5px;
+    border-radius: 10px;
+}
+img{display: block;
+    max-width: 100%;}
+
+.produtos{
+    max-width: 600px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+}
+.produtos>div:nth-child(-n+3){
+    color:blueviolet;
+    display: grid;
+}
+/* .produtos>div{ } */
+.produtos >div:nth-child(n+4){ /*.produtos >div:nth-child(n+3)pega apartir do 3 child ate la (2) so o 2 elemento*/
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+.produtos > div >div>button{
+    max-width:100%;
+    color:white;
+    border:None;
+    background-color: rgb(2, 141, 13);
+  
+    padding: 10px 20px 10px 20px !important;
+
+    border-radius: 38px;
+    font-size: 13px;
+}
+.produtos>div.anuncio{
+    grid-column: 1;
+    grid-row: 2/6;
+    border-top: 2px solid rgb(248, 160, 144);
+    display: block;
+}
+/* @media (600) {
+    .produtos > div >div>button{
+        padding: 10px 40px 10px 40px !important;
+    
+    }
+    
+} */

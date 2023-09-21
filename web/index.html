@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="card">
+        <h3>Analise de Dados</h3>
+        <p>COMPARAÇÃO DE PREÇOS</p>
+        <div class="pulse" id="pulse-blue"></div>
+        <div class="pulse-red" id="pulse-red"></div>
+        <div class="area-chart">
+            <canvas class="canvas" id="canvas"></canvas>
+        </div>
+        <table class="styled table" id="produts-tb">
+            <thead>
+                <th>Date</th>
+                <th>Invoice</th>
+                <th>Supplier</th>
+                <th>Barcode</th>
+                <th>Description</th>
+                <th>Old Price</th>
+                <th>New Price</th>
+                <th>#Diff</th>
+                <th>Obs</th>
+            </thead>
+            <tbody>
+                
+                 <p edit ="true">Folks</p>
+               
+            </tbody>
+        </table>
+    </div>
+    <style>
+        .trigonometry {
+            margin-top: 60px;
+            border: 1px solid #bd2020;
+            width: 400px;
+            height: 400px;
+
+        }
+    </style>
+    <div class="trigonometry">
+        <canvas class="math-canvas" id="math-canvas"></canvas>
+    </div>
+   
+    <script>
+        var dta=[
+{name:"SPAR F/BATH KIDS MAGIC 6*1LT",barcoder:'6001008107559'},
+{name:",SPAR GERMEX APC ORANGE 12*750M",barcoder:'6001008107559'},
+{name:"SPAR GERMEX BATHROOM CLNR 12*7",barcoder:'6001008657665'},
+{name:"SPAR GERMEX BLEACH E/DAY 12*75",barcoder:'6001008776618'},
+{name:"SPAR GERMEX BLEACH LAVEND 12*7",barcoder:'6001008808906'},
+{name:"SPAR GERMEX D/WASH B&LIME 12*7",barcoder:'6001008808890'},
+{name:"SPAR GERMEX SOAP ORCHARD 12*17",barcoder:'6001008732423'},
+{name:"SPAR GERMEX SOAP SPORT 12*175G",barcoder:'6001008748325'},
+{name:"SPAR GHERKINS SWEET & SOUR 6*7",barcoder:'6001008732492'},
+{name:"SPAR GRANOLA FRUIT 12*1KG",barcoder:'6001008732485'},
+{name:"SPA,R GRANOLA ORIGINAL 12*1KG",barcoder:'6001008795862'},
+{name:",SPAR GRANOLA TRIPLE CHOC 12*1K",barcoder:'6001008747618'},
+{name:"SPAR GRANOLA TROPICAL 12*1KG",barcoder:'6001008747625'},
+{name:",SPAR GRN TEA CITRUS&GING 6*20",barcoder:'6001008255885'},
+{name:"SPAR GUMMY RINGS 12*125GR",barcoder:'6001008776298'},
+    ];
+
+ 
+ 
+        var tb=document.getElementById('produts-tb');
+        tb.classList.remove('styled-table');
+
+        function Product(date,invoice,supplie,barcode,descriptio,old,nwp){
+            this.date=date;
+            this.invoice=Math.floor(invoice)
+            this.supplie=supplie;
+            this.barcode=barcode;
+            this.descriptio=descriptio;
+            this.old=old;
+            this.nwp=nwp;
+            this.diff=this.old-this.nwp;
+            this.obs=this.diff>0?"Subiu":"Baixou";
+         
+        }
+        function createRow(product){
+            var row=document.createElement('tr');
+            row.innerHTML=` 
+            <td>${product.date}</td>
+            <td>${product.invoice}</td>
+            <td>${product.supplie}</td>
+            <td>${product.barcode}</td>
+            <td editable=true>${product.descriptio}</td>
+            <td>${product.old}</td>
+            <td>${product.nwp}</td>
+            <td>${product.diff}</td>      
+            <td>${product.obs}</td>`
+            tb.appendChild(row);
+        }
+        
+        for(var i=0;i<dta.length;i++){
+            const product=new Product(date="16/09/2023",invoice=Math.random()+3888,
+            supplier='Vip Armazem Muxara',barcode=Math.ceil(dta[i].barcoder),
+            descriptio=dta[i].name,old=Math.round(Math.random()*215),nwp=Math.ceil(Math.random()*200));
+            createRow(product);
+             
+                 
+        }
+        tb.classList.add('styled-table');
+    </script>
+    <!-- <script src='month.js'></script> -->
+    <script src='api.js'></script>
+    <style src='style.css'></style>
+</body>
+</html>

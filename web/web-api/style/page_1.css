@@ -1,0 +1,67 @@
+*{
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0px;
+}
+body{
+    padding: 10px;
+}
+a{ list-style: none;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+
+}
+.header{
+    padding-left: 10px;
+    background: black;
+    flex-wrap: wrap; /*quando atela for pekna ele se alinha de cima/ baixa*/
+    display: flex;
+    justify-content: space-between; /*para manter longe um do outro   */ 
+    padding: 10px;
+    grid-template-columns: 1fr 4fr;
+}
+.menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+}
+.menu li{
+    padding-left: 10px;
+   list-style: none;
+}
+.menu li a{
+    margin-left: 10px;
+    padding: 5px;
+    border-radius: 10px;
+}
+.title{
+    margin-top: 100px;
+    text-align: start;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.section-flex{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+img{
+    display: block;
+    max-width: 100%; /*faz ele se aumentar no maximo 100% do width do pai*/
+}
+.section-flex >div{
+    flex:1 1 100px ;
+    background-color: bisque;
+    
+}
+.section-flex>div>p{
+    background-color: rgb(146, 143, 143);
+    color: white;
+    padding: 8px;
+
+}

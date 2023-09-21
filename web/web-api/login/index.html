@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!---Coding By CodingLab | www.codinglabweb.com--->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Registros</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="container">
+      <header>Colecta de dados</header>
+      <form action="#" class="form" id="formulario" name="dados">
+        <div class="input-box">
+          <label>Nome Completo</label>
+          <input type="text" placeholder="Seu nome completo " required />
+        </div>
+
+        <div class="input-box">
+          <label>Email  </label>
+          <input type="text" placeholder="informe seu email" required />
+        </div>
+
+        <div class="column">
+          <div class="input-box">
+            <label>Numero do Telefone</label>
+            <input type="number" placeholder="Informe seu contacto" required />
+          </div>
+          <div class="input-box">
+            <label>Data de Nacimento</label>
+            <input type="date" placeholder="Sua data de nacimento" required />
+          </div>
+        </div>
+        <div class="gender-box">
+          <h3>Gender</h3>
+          <div class="gender-option">
+            <div class="gender">
+              <input type="radio" id="check-male" name="gender" checked />
+              <label for="check-male">masculino</label>
+            </div>
+            <div class="gender">
+              <input type="radio" id="check-female" name="gender" />
+              <label for="check-female">Femenino</label>
+            </div>
+            <div class="gender">
+              <input type="radio" id="check-other" name="gender" />
+              <label for="check-other">prefiro nao dizer</label>
+            </div>
+          </div>
+        </div>
+        <div class="input-box address">
+          <label>Endereço</label>
+          <input type="text" placeholder="Descreva o primeiro endereco" required />
+          <input type="text" placeholder="Descreva o segundo endereco" required />
+          <div class="column">
+            <div class="select-box">
+              <select>
+                <option hidden>Bairro</option>
+                <option>Cariaco</option>
+                <option>Noviane</option>
+                <option>Expansao</option>
+                <option>Ingonane</option>
+                <option>Chuiba</option>
+                <option>Natite</option>
+                <option>Outro</option>
+              </select>
+            </div>
+            <div class="select-box">
+                <select>
+                  <option hidden>Posto de Trabalho (Policial) </option>
+                  <option> 1-Esquadra </option>
+                  <option>2-Esquadra</option>
+                  <option>3-Esquadra</option>
+                  <option>4-Esquadra</option>
+                  <option>Outro</option>
+                </select>
+              </div>
+            </div>
+            <div class="column">
+              <input type="text" placeholder="Outra informacoa" required />
+            <input type="text" placeholder="Distrito" required />
+          </div>
+          <div class="column">
+            <input type="text" placeholder="A sua Regiao" required />
+            <input type="number" placeholder="codigo postal" required />
+          </div>
+        </div>
+        <button id="btn-send">Enviar</button>
+      </form>
+    </section>
+
+    <script src="validator.js"></script>
+  </body>
+</html>
+

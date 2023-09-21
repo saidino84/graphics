@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Desenhando ondas com Canvas</title>
+	<style>
+		canvas {
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="myCanvas" width="400" height="200"></canvas>
+	<canvas id="myCanvas" width="400" height="200"></canvas>
+
+	<script>
+		const canvas = document.getElementById('myCanvas');
+		const ctx = canvas.getContext('2d');
+
+		// Define a cor da linha e do círculo
+		const lineColor = '#f00';
+		const circleColor = '#f00';
+
+		// Define a largura da linha e do círculo
+		const lineWidth = 2;
+		const circleWidth = 5;
+
+		// Define a distância horizontal e vertical entre os pontos
+		const deltaX = canvas.width / 10;
+		const deltaY = canvas.height / 4;
+
+		// Desenha a curva usando o método bezierCurveTo()
+		ctx.strokeStyle = lineColor;
+		ctx.lineWidth = lineWidth;
+		ctx.beginPath();
+		ctx.moveTo(0, canvas.height / 2);
+		for (let i = 0; i <= 10; i++) {
+			const x = i * deltaX;
+			const y = canvas.height / 2 + deltaY * Math.sin(i);
+			const cp1x = x - deltaX / 2;
+			const cp1y = canvas.height / 2;
+			const cp2x = x - deltaX / 2;
+			const cp2y = y;
+            ctx.strokeStyle='black'
+			ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y);
+            ctx.stroke()
+			// Desenha o círculo vermelho no ponto
+			ctx.strokeStyle = circleColor;
+			ctx.lineWidth = circleWidth;
+			ctx.beginPath();
+			ctx.arc(x, y, circleWidth / 2, 0, 2 * Math.PI);
+			ctx.stroke();
+			ctx.closePath();
+
+			// Restaura as configurações da linha
+			ctx.strokeStyle = lineColor;
+			ctx.lineWidth = lineWidth;
+		}
+		ctx.stroke();
+	</script>
+</body>
+</html>

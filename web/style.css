@@ -1,0 +1,151 @@
+:root{
+    --primary-color:#44d4fd;
+    --primary-color-blue:#44d4fd;
+    --primary-color-red:#ff0800;
+    --primary-color-low:#12c4f579;
+    --color-label:#a7a7a7;
+    --coloor-text:#e2dede;
+    --font-family:'Montserrat';
+    --card-bg-color:#1b1b1b;
+    --primary-color-sef:#009879;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    /* height: 100vh; */
+    background: var(--primary-color);
+    /* display: grid;  
+    place-items: center;   */
+    font-family: var(--font-family);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.card{
+    position: relative;
+     
+    /* margin: 50% 50%; */
+    padding: 10px;
+    border-radius: 14px;
+    background: var(--card-bg-color);
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.5);
+    /* height: 500px; */
+}
+.card h3{
+    color: #f9f9f9;
+    font-size: 26px;
+    font-weight: 500;
+    letter-spacing: .5px;
+    margin: 0 0 2px;
+}
+.card p{
+    color:var(--primary-color);
+    font-size:14px;
+    margin: 0 0 16px;
+}
+.card .pulse{
+    position: absolute;
+    right: 40px;
+    height: 14px;
+    width: 14px;
+    top: 45px;
+    background: var(--primary-color-blue); 
+    border-radius: 50%;
+}
+.card .pulse-red{
+    position: absolute;
+    right: 100px;
+    height: 14px;
+    width: 14px;
+    top: 45px;
+    background: var(--primary-color-red); 
+    border-radius: 50%;
+}
+.card .pulse::after{
+    content: '';
+    position: absolute;
+    left: -1px;
+    top:-1px;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border:1px solid var(--primary-color-blue);
+    animation: pulse 3s linear infinite;
+    transform-origin: center;
+    opacity: .8;
+    scale: 0;
+
+}
+
+@keyframes pulse {
+    70%{
+        scale: 0;
+        opacity: .8;
+    }
+    100%{
+        scale: 2;
+        opacity: 0;
+    }
+}
+
+.card .area-chart{
+    /* border: 1px dashed var(--primary-color); */
+    display: grid;
+    place-items: center;
+    padding: 2px;
+    border-radius: 5px;
+}
+.card .area-chart canvas{
+    /* background: #071e22; */
+    color: aqua;
+}
+.card .styled-table{
+    border-collapse: collapse;
+    position: relative;
+    /* margin: 25px 0; */
+    overflow: hidden;
+    font-size: 0.9rem;
+    overflow-y: hidden;
+    width: 100%;
+    height: 500px;
+    font-family: sans-serif;
+    /* width: 600px; */
+     background: rgba(119, 109, 109, 0.253);
+      
+     color: whitesmoke;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);;
+}
+/* Styling the header */
+.styled-table thead tr{
+    background-color: var(--primary-color);
+    /* background-color: rgb(194, 26, 26); */
+    color: #ffffff;
+    text-align: left;
+    /* border-radius: 10px; */
+}
+/* Moving onto the table cells
+Let's space things out a bit: */
+.styled-table th,
+.styled-table td{
+    padding: 12px 15px;
+}
+.styled-table tbody tr{
+    /* border-bottom: 1px solid #dddddd; */
+}
+.styled-table tbody tr:nth-of-type(even){
+    background-color: #3d3c3c;
+}
+.styled-table tbody tr:last-of-type{
+    border-bottom: 2px solid var(--primary-color);
+}
+/* Lastly, let's make the active row look different
+For this, we're just going to make changes to the text: */
+.styled-table tbody tr:hover{
+    /* font-weight: bold; */
+    color: var(--primary-color);
+}
