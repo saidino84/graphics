@@ -60,6 +60,7 @@ class Board(UserControl):
         )
     def build(self):
         self.currentPiece.initialize()
+        self.list=list(map(lambda index:Pixel(index,color=colors.BLUE_ACCENT if index in self.currentPiece.positions else colors.WHITE24,).get_pixel(),range(0,self.col_lenth*self.row_lenth)))
         # self.currentPiece.positions=list(map(lambda index:index+self.col_lenth,self.currentPiece.positions))
         self.grid=GridView(
                 # col=10,
@@ -68,7 +69,7 @@ class Board(UserControl):
                 child_aspect_ratio=1.0,
                 spacing=1,#spaçamento vertical
                 run_spacing=1,#espaçamento horizontal
-                controls=list(map(lambda index:Pixel(index,color=colors.BLUE_ACCENT if index in self.currentPiece.positions else colors.WHITE24,                                                     ).get_pixel(),range(0,self.col_lenth*self.row_lenth))),
+                controls=self.list,
                     )
         return Column(
                 controls=[
@@ -102,8 +103,9 @@ class Board(UserControl):
         self.currentPiece.positions=list(map(lambda index:index+self.col_lenth,self.currentPiece.positions))
         print(f'NEW {self.currentPiece.positions}')
         print('Moving...')
-        # self.page.update()
-        self.grid.controls[23].update()
+        _lista=list(map(lambda index:Pixel(index,color=colors.BLUE_ACCENT if index in self.currentPiece.positions else colors.WHITE24,).get_pixel(),range(0,self.col_lenth*self.row_lenth)))
+        self.grid.controls=_lista
+        self.grid.update()
         self.page.update()
     def on_long_press_handler(self,x):
         # print(f'Moving.. {self.page.window.x},')
@@ -120,9 +122,11 @@ class Pixel(UserControl):
         super().__init__(**kw)
     def get_pixel(self ):
         return Container(
-            padding=1,bgcolor=self.color,
+            padding=1,
+            bgcolor=self.color,
             border_radius=4,
             alignment=alignment.center,
+            border=border.all(color=colors.WHITE10 ,width=2) if self.color==colors.BLUE_ACCENT else None,
             content=Text(f'{self.index}',size=10,style=TextStyle()),
         )
     def build(self):
