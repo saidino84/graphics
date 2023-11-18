@@ -78,6 +78,5 @@ def main(page:Page):
 
 
     page.add(board)
-
 if __name__=="__main__":
     app(target=main)
